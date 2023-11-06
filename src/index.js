@@ -1,18 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Avatar } from 'antd'
+import UserComments from './UserComments'
+import SingleComment from './SingleComment'
 
 
 const App = () => {
-
-    const sampleText = 'random text';
-
-    return (
-        <> 
-            <h1 style={{color: 'red'}} className='font-big'>
-                {sampleText} 
-            </h1>
-        </>
-    )
+  return (
+    <>
+      <UserComments>
+        <SingleComment 
+          avatar="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
+          title='title 1'
+          description='description 1'
+        />
+        <SingleComment 
+          avatar="https://xsgames.co/randomusers/avatar.php?g=pixel&key=2"
+          title='title 1'
+          description='description 1'
+        />
+      </UserComments>
+    </>
+  );
 }
 
 
