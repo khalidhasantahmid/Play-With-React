@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Avatar } from 'antd'
 import UserComments from './UserComments'
 import SingleComment from './SingleComment'
+import FunctionalComponent from './FunctionalComponent'
 
 
 const App = () => {
@@ -20,6 +20,8 @@ const App = () => {
           description='description 1'
         />
       </UserComments>
+
+      <FunctionalComponent />
     </>
   );
 }

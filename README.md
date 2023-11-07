@@ -2,13 +2,13 @@
 
 Fun and struggles of learning react from scratch. 
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Getting Started with Ant Design of React
+## Getting Started with Ant Design of React
 
-This project Styles will be implemented with [$ npm install antd --save](https://ant.design/).
+This project Styles will be implemented with [Ant Design](https://ant.design/docs/react/use-with-create-react-app).
 
 ## Available Scripts
 
