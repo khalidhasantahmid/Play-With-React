@@ -4,8 +4,7 @@ import { Card, Avatar } from 'antd'
 const { Meta } = Card;
 
 const SingleComment = (props) => {
-    console.log(props);
-    console.log(<Avatar src={props.avatar} />);
+    
     return (
         <Card
             style={{

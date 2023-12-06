@@ -3,13 +3,9 @@ import { Button, Modal } from 'antd';
 
 class FunctionalComponent extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {isModalOpen: false}
-    }
+    state = {isModalOpen: false}
 
     showModal = () => {
-        console.log('yoo');
         return this.setState({isModalOpen: true})
     };
     handleOk = () => {
@@ -19,6 +15,17 @@ class FunctionalComponent extends React.Component {
         return this.setState({isModalOpen: false})
     };
 
+    componentDidMount() {
+        console.log('mounted')
+    }
+
+    componentDidUpdate() {
+        console.log('updated')
+
+        let modalStatus = this.state.isModalOpen ? 'Modal showing' : 'Modal is hidden'
+
+        console.log(modalStatus)
+    }
     
     render() {
         return(
