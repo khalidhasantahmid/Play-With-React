@@ -3,11 +3,24 @@ import UserComments from './UserComments'
 import SingleComment from './SingleComment'
 import FunctionalComponent from './FunctionalComponent'
 import SearchInput from "./SearchInput";
+import axios from "axios";
+import ImageList from "./ImageList";
 
 class App extends React.Component {
 
-    onSearchSubmit = (entry) => {
+    state = { images:[] }
+
+    onSearchSubmit = async (entry) => {
         console.log('App', entry);
+
+        const hostUrl = process.env.REACT_APP_PIXABAY_HOST_URL
+        const key     = process.env.REACT_APP_PIXABAY_API_KEY
+        const params  = `?key=${key}&q=${entry}&image_type=photo&pretty=true&per_page=50`
+
+        const response = await axios.get(hostUrl + '/' + params)
+        console.log(response);
+
+        this.setState({images:response.data.hits})
     }
 
     render() {
@@ -28,6 +41,7 @@ class App extends React.Component {
                 <FunctionalComponent />
                 <hr />
                 <SearchInput onSearchSubmit={this.onSearchSubmit} />
+                <ImageList images={this.state.images}/>
             </>
             )
     }
