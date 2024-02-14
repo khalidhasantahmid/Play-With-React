@@ -1,10 +1,13 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserComments from './UserComments'
 import SingleComment from './SingleComment'
 import FunctionalComponent from './FunctionalComponent'
 import SearchInput from "./SearchInput";
 import axios from "axios";
 import ImageList from "./ImageList";
+import Navbar from "./Navbar";
+import Login from "./Login";
 
 class App extends React.Component {
 
@@ -26,6 +29,12 @@ class App extends React.Component {
     render() {
         return (
             <>
+                <BrowserRouter>    
+                    <Navbar />
+                    <Routes>
+                        <Route path="/login" Component={Login} />
+                    </Routes>
+                </BrowserRouter>
                 <UserComments>
                 <SingleComment 
                     avatar="https://xsgames.co/randomusers/avatar.php?g=pixel&key=1"
